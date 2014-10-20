@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlzkj.app.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.zlzkj.app.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="login_pass" jdbcType="CHAR" property="loginPass" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from z_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zlzkj.app.model.User" useGeneratedKeys="true" keyProperty="id">
+    insert into z_user (id, login_name, login_pass, 
+      sex, add_time)
+    values (#{id,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{loginPass,jdbcType=CHAR}, 
+      #{sex,jdbcType=TINYINT}, #{addTime,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zlzkj.app.model.User">
+    update z_user
+    set login_name = #{loginName,jdbcType=VARCHAR},
+      login_pass = #{loginPass,jdbcType=CHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      add_time = #{addTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, login_name, login_pass, sex, add_time
+    from z_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, login_name, login_pass, sex, add_time
+    from z_user
+  </select>
+</mapper>
