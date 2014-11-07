@@ -68,7 +68,7 @@
 	
 	<!-- 自动扫描mapper -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-	    <property name="basePackage" value="com.zlzkj.app.mapper" />  
+	    <property name="basePackage" value="com.zlzkj.app.mapper" />
 	</bean> 
 	
 	<!-- 事务管理器 -->

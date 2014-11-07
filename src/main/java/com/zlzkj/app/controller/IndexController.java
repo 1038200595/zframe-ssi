@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zlzkj.app.model.User;
-import com.zlzkj.app.service.UserService;
+import com.zlzkj.app.model.Admin;
+import com.zlzkj.app.service.AdminService;
 import com.zlzkj.core.base.BaseController;
 
 /**
@@ -20,7 +20,7 @@ import com.zlzkj.core.base.BaseController;
 public class IndexController extends BaseController{
 	
 	@Autowired
-	private UserService userService;
+	private AdminService adminService;
 	
 	@RequestMapping(value={"/"})
 	public void index(HttpServletRequest request,HttpServletResponse response) {
@@ -34,7 +34,7 @@ public class IndexController extends BaseController{
 		
 		//User user = userService.find();
 		
-		List<User> userList = userService.findAll();
+		List<Admin> userList = adminService.findAll();
 		
 		ajaxReturn(response, userList);
 	}

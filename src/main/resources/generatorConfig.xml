@@ -35,7 +35,7 @@
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="mybatis.auto_xml"
+		<sqlMapGenerator targetPackage="mybatis.auto"
 			targetProject="${projectName}/src/main/resources">
 		</sqlMapGenerator>
 
@@ -45,7 +45,7 @@
 		</javaClientGenerator>
 		
 		<!-- 表映射 -->
-		<table tableName="z_user" domainObjectName="User"></table>
+		<table tableName="z_admin" domainObjectName="Admin"></table>
 
 	</context>
 </generatorConfiguration>

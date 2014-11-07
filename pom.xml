@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zlzkj</groupId>
-	<artifactId>zframe-mybatis</artifactId>
+	<artifactId>zframe-ssi</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>zframe-mybatis</name>
+	<name>zframe-ssi</name>
 	<properties>
 		<java-version>1.7</java-version>
 		<org.springframework-version>4.1.1.RELEASE</org.springframework-version>
@@ -135,7 +135,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>zframe-mybatis</finalName>
+		<finalName>zframe-ssi</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
