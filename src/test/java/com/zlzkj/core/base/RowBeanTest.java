@@ -3,6 +3,9 @@ package com.zlzkj.core.base;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import com.zlzkj.core.sql.RowBean;
+import com.zlzkj.core.sql.Row;
+
 public class RowBeanTest {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {

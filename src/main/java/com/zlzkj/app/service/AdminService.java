@@ -2,13 +2,14 @@ package com.zlzkj.app.service;
 
 import java.util.List;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion.User;
 import com.zlzkj.app.mapper.AdminMapper;
 import com.zlzkj.app.model.Admin;
+import com.zlzkj.core.util.Fn;
 
 @Service
 @Transactional
@@ -26,6 +27,14 @@ public class AdminService {
 	}
 	
 	public void save(Admin entity) {
+		
+		entity.setLoginPass(DigestUtils.md5Hex(entity.getLoginPass()));
+		entity.setAddTime(Fn.time());
+		entity.setLoginCount(0);
+		entity.setLastLoginIp("127.0.0.1");
+		entity.setLastLoginTime(0);
+		entity.setIsDisabled((byte) 0);
+		
 		mapper.insert(entity);
 	}
 	
