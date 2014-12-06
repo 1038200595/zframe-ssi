@@ -1,8 +1,5 @@
 package com.zlzkj.app.model;
 
-import com.zlzkj.core.sql.Table;
-
-@Table(name="z_admin")
 public class Admin {
     private Integer id;
 

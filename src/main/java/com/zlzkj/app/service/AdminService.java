@@ -9,6 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.zlzkj.app.mapper.AdminMapper;
 import com.zlzkj.app.model.Admin;
+import com.zlzkj.core.mybatis.SqlRunner;
+import com.zlzkj.core.sql.Row;
+import com.zlzkj.core.sql.SQLBuilder;
 import com.zlzkj.core.util.Fn;
 
 @Service
@@ -17,6 +20,9 @@ public class AdminService {
 
 	@Autowired
 	private AdminMapper mapper;
+	
+	@Autowired
+	private SqlRunner sqlRunner;
 	
 	public Integer delete(Integer id){
 		return mapper.deleteByPrimaryKey(id);
@@ -44,6 +50,15 @@ public class AdminService {
 	
 	public Admin findById(Integer id){
 		return mapper.selectByPrimaryKey(id);
+	}
+	
+	public List<Row> findBySQL(){
+		
+		String sql = SQLBuilder.getSQLBuilder(Admin.class).fields("nickname,login_name,add_time").where("id=#{0}").buildSql();
+		
+		System.out.println("------------>>>>"+sql);
+		
+		return sqlRunner.select(sql,1);
 	}
 	
 }
