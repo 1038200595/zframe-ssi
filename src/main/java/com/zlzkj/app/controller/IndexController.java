@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zlzkj.app.model.Admin;
 import com.zlzkj.app.service.AdminService;
 import com.zlzkj.core.base.BaseController;
+import com.zlzkj.core.sql.Row;
 
 /**
  * 首页控制器
@@ -34,7 +34,7 @@ public class IndexController extends BaseController{
 		
 		//User user = userService.find();
 		
-		List<Admin> userList = adminService.findAll();
+		List<Row> userList = adminService.findBySQL();
 		
 		ajaxReturn(response, userList);
 	}
