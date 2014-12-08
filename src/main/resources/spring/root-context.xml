@@ -34,9 +34,9 @@
 		<property name="password" value="${jdbc.password}" />
 
 		<!-- Filters -->
-		<property name="filters" value="config,stat" />
-		<property name="connectionProperties" value="config.decrypt=true" />
-
+		<!-- <property name="filters" value="config,stat" />
+		<property name="connectionProperties" value="config.decrypt=true" /> -->
+		<property name="filters" value="stat" />
 		<!-- 配置初始化大小、最小、最大 -->
 		<property name="initialSize" value="1" />
 		<property name="minIdle" value="1" />
