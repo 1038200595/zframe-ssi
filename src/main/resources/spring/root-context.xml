@@ -9,7 +9,10 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-
+	
+	<!-- 注入获取上下文工具类的applicationContext属性 -->
+	<bean class="com.zlzkj.core.util.SpringContextUtil"></bean>
+	
 	<!-- 注解支持 -->
 	<context:annotation-config />
 

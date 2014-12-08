@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zlzkj.app.service.AdminService;
@@ -23,7 +24,7 @@ public class IndexController extends BaseController{
 	private AdminService adminService;
 	
 	@RequestMapping(value={"/"})
-	public void index(HttpServletRequest request,HttpServletResponse response) {
+	public String index(Model model,HttpServletRequest request,HttpServletResponse response) {
 		
 //		User test = new User();
 //		test.setAddTime(Fn.time());
@@ -36,7 +37,9 @@ public class IndexController extends BaseController{
 		
 		List<Row> userList = adminService.findBySQL();
 		
-		ajaxReturn(response, userList);
+		model.addAttribute("userList",userList);
+		
+		return "index/index";
 	}
 	
 	

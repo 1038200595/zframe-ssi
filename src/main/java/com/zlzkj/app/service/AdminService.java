@@ -56,8 +56,6 @@ public class AdminService {
 		
 		String sql = SQLBuilder.getSQLBuilder(Admin.class).fields("nickname,login_name,add_time").where("id=#{0}").buildSql();
 		
-		System.out.println("------------>>>>"+sql);
-		
 		return sqlRunner.select(sql,1);
 	}
 	
