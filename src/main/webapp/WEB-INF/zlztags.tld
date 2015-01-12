@@ -39,19 +39,19 @@
 	<!-- URL组装 -->
 	<function>
 	    <name>u</name>
-	    <function-class>com.zlzkj.core.CoreUtils</function-class>
-	    <function-signature>java.lang.String generateUrl(java.lang.String)</function-signature>
+	    <function-class>com.zlzkj.core.util.Fn</function-class>
+	    <function-signature>java.lang.String url(java.lang.String)</function-signature>
 	</function>
 	<!-- 缩放图片 -->
 	<function>
 	    <name>resize</name>
-	    <function-class>com.zlzkj.core.CoreUtils</function-class>
+	    <function-class>com.zlzkj.core.util.Fn</function-class>
 	    <function-signature>java.lang.String resizeImage(java.lang.String,java.lang.String)</function-signature>
 	</function>
 	<!-- 裁剪图片 -->
 	<function>
 	    <name>crop</name>
-	    <function-class>com.zlzkj.core.CoreUtils</function-class>
+	    <function-class>com.zlzkj.core.util.Fn</function-class>
 	    <function-signature>java.lang.String cropImage(java.lang.String,java.lang.String)</function-signature>
 	</function>
 	<!-- 自定义函数 -END- -->
