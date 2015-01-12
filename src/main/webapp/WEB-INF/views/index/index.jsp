@@ -21,6 +21,9 @@
 	<c:forEach items="${userList}" var="user">
 		${user.nickname}
 	</c:forEach>
-
+	<br/>
+	
+	${z:u("admin/list")}
+	
 </body>
 </html>

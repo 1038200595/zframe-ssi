@@ -54,7 +54,7 @@ public class AdminService {
 	
 	public List<Row> findBySQL(){
 		
-		String sql = SQLBuilder.getSQLBuilder(Admin.class).fields("nickname,login_name,add_time").where("id=#{0}").buildSql();
+		String sql = SQLBuilder.getSQLBuilder(Admin.class).fields("nickname,login_name,add_time").where("id=#{0}").selectSql();
 		
 		return sqlRunner.select(sql,1);
 	}

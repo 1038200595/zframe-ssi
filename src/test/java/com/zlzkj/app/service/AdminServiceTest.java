@@ -87,7 +87,7 @@ public class AdminServiceTest extends BaseSpringTest{
 	public void select(){
 		
 		SQLBuilder adminSB = SQLBuilder.getSQLBuilder(Admin.class);
-		String sql = adminSB.fields("id,login_name").where("id=#{0}").buildSql();
+		String sql = adminSB.fields("id,login_name").where("id=#{0}").selectSql();
 		List<Row> list = sqlRunner.select(sql,1);
 		
 		for(Row r:list){
@@ -101,7 +101,7 @@ public class AdminServiceTest extends BaseSpringTest{
 	public void find(){
 		
 		SQLBuilder adminSB = SQLBuilder.getSQLBuilder(Admin.class);
-		String sql = adminSB.fields("id,login_name").where("id=#{0}").buildSql();
+		String sql = adminSB.fields("id,login_name").where("id=#{0}").selectSql();
 		Row row = sqlRunner.find(sql, 1);
 		
 		logger.info("@find >>>> user:"+JSON.toJSONString(row));
@@ -113,7 +113,7 @@ public class AdminServiceTest extends BaseSpringTest{
 	@Test
 	public void count(){
 		SQLBuilder adminSB = SQLBuilder.getSQLBuilder(Admin.class);
-		String sql = adminSB.fields("count(*)").buildSql();
+		String sql = adminSB.fields("count(*)").selectSql();
 		int count = sqlRunner.count(sql);
 		
 		logger.info("@count >>>> count:"+count);
