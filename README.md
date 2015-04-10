@@ -3,7 +3,7 @@ zframe-ssi JAVA快速开发框架
 
 本框架基于SpringMVC+Spring+MyBatis3整合，提供了一些快速开发特性，具体如下描述：
 
-
+导入方式：Myeclipse->Import->Maven4MyEclipse->Exsit Maven Project
 
 ###1.针对前端页面快速开发
 说明：前台页面采用JSP作为视图
